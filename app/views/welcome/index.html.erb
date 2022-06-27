@@ -1,0 +1,11 @@
+<h1>Annotations App</h1>
+
+<% if current_user %>
+  <div>
+    <p>You are logged in, <%= current_user.display_name %>.</p>
+  </div>
+<% else %>
+  <div>
+    <p>Welcome to the annotations server, please <%= link_to "log in", user_cas_omniauth_authorize_path %>.</p>
+  </div>
+<% end %>
