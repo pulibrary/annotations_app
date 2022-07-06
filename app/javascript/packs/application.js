@@ -9,7 +9,9 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import Mirador from "mirador/dist/es/src/index.js"
 import miradorImageToolsPlugin from "mirador-image-tools/es/plugins/miradorImageToolsPlugin.js";
-
+import annotationPlugin from "mirador-annotations/es";
+import LocalStorageAdapter from 'mirador-annotations/es/LocalStorageAdapter.js';
+import AnnototAdapter from 'mirador-annotations/es/AnnototAdapter.js';
 
 Rails.start()
 Turbolinks.start()
@@ -17,3 +19,6 @@ ActiveStorage.start()
 
 window.Mirador = Mirador;
 window.miradorImageToolsPlugin = miradorImageToolsPlugin;
+window.annotationPlugin = annotationPlugin;
+window.LocalStorageAdapter = LocalStorageAdapter;
+window.AnnototAdapter = AnnototAdapter;
