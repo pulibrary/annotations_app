@@ -1,9 +1,11 @@
 window.onload = function(){
 
+  const endpointUrl = 'http://0.0.0.0:8888/annotation';
   const config = {
     annotation: {
-      adapter: (canvasId) => new LocalStorageAdapter(`localStorage://?canvasId=${canvasId}`),
-      exportLocalStorageAnnotations: true, // display annotation JSON export button
+      //adapter: (canvasId) => new LocalStorageAdapter(`localStorage://?canvasId=${canvasId}`),
+      adapter: (canvasId) => new SimpleAnnotationServerV2Adapter(canvasId, endpointUrl),
+      exportLocalStorageAnnotations: false, // display annotation JSON export button
     },
     id: 'viewer',
     window: {
