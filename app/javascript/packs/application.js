@@ -7,7 +7,13 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+import Mirador from "mirador/dist/es/src/index.js"
+import miradorImageToolsPlugin from "mirador-image-tools/es/plugins/miradorImageToolsPlugin.js";
+
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+window.Mirador = Mirador;
+window.miradorImageToolsPlugin = miradorImageToolsPlugin;
